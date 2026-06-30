@@ -1,0 +1,33 @@
+// Donation Contract
+// Problem Statement
+
+// Accept Ether.
+
+// Track total donations.
+
+// Show balance.
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Donation {
+
+    uint256 public totalDonations;
+
+    receive() external payable{
+
+        totalDonations += msg.value;
+
+    }
+
+    function getBalance()
+    public
+    view
+    returns(uint256)
+    {
+
+        return address(this).balance;
+
+    }
+
+}
